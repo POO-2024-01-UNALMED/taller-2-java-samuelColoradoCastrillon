@@ -1,10 +1,11 @@
 package test;
-
+import java.util.List;
+import java.util.ArrayList;
 public class Auto {
     //Atributos
     String modelo;
     int precio;
-    Asiento [] asientos;
+    public List<Asiento> asientos = new ArrayList<>();
     String marca;
     Motor motor;
     int registro;
@@ -12,7 +13,7 @@ public class Auto {
 
     //Métodos
     public int cantidadAsientos() {
-        return asientos.length;
+        return asientos.size();
     }
     public String verificarIntegridad() {
         boolean sitsRegister = true;
