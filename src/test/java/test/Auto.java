@@ -11,27 +11,25 @@ public class Auto {
 
     //Métodos
     public int cantidadAsientos() {
-        if (asientos != null) {
-            return asientos.length;
-        } else {
-            return 0;
+        int cantidad = 0;
+        for (Asiento asiento : asientos) {
+            if (asiento instanceof Asiento) {
+                cantidad++;
+            }
         }
+        return cantidad;
     }
     public String verificarIntegridad() {
-        boolean sitsRegister = true;
-        for (Asiento asiento : asientos) {
-            if (asiento.registro == this.registro) {
-                continue;
-            }
-            else {
-                sitsRegister = false;
-                break;
-            }
-        }
-        if (this.registro == motor.registro && sitsRegister) {
-            return "Auto original";
-        } else {
+        if (this.registro != this.motor.registro) {
             return "Las piezas no son originales";
         }
+        for (Asiento asiento: asientos) {
+            if (asiento instanceof Asiento) {
+                if (this.registro != asiento.registro) {
+                    return "Las piezas no son originales";
+                }
+            }
+        }
+        return "Las piezas son originales";
     }
 }
