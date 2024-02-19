@@ -30,6 +30,6 @@ public class Auto {
                 }
             }
         }
-        return "Las piezas son originales";
+        return "Auto original";
     }
 }
